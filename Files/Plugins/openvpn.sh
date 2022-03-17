@@ -43,13 +43,13 @@ echo "client = yes\ndebug = 6\n[openvpn]\naccept = 127.0.0.1:1194\nconnect = $IP
 cp -r /usr/share/easy-rsa/ /etc/openvpn
 mkdir /etc/openvpn/easy-rsa/keys
 sed -i 's|export KEY_COUNTRY="US"|export KEY_COUNTRY="MY"|' /etc/openvpn/easy-rsa/vars
-sed -i 's|export KEY_PROVINCE="CA"|export KEY_PROVINCE="RBT"|' /etc/openvpn/easy-rsa/vars
+sed -i 's|export KEY_PROVINCE="CA"|export KEY_PROVINCE="KL"|' /etc/openvpn/easy-rsa/vars
 sed -i 's|export KEY_CITY="SanFrancisco"|export KEY_CITY="Kuala Lumpur"|' /etc/openvpn/easy-rsa/vars
-sed -i 's|export KEY_ORG="Fort-Funston"|export KEY_ORG="PR Aiman"|' /etc/openvpn/easy-rsa/vars
-sed -i 's|export KEY_EMAIL="me@myhost.mydomain"|export KEY_EMAIL="praiman@gmail.com"|' /etc/openvpn/easy-rsa/vars
-sed -i 's|export KEY_OU="MyOrganizationalUnit"|export KEY_OU="PR Aiman"|' /etc/openvpn/easy-rsa/vars
-sed -i 's|export KEY_NAME="EasyRSA"|export KEY_NAME="PR Aiman"|' /etc/openvpn/easy-rsa/vars
-sed -i 's|export KEY_OU=changeme|export KEY_OU=PR Aiman|' /etc/openvpn/easy-rsa/vars
+sed -i 's|export KEY_ORG="Fort-Funston"|export KEY_ORG="Aidan VPN"|' /etc/openvpn/easy-rsa/vars
+sed -i 's|export KEY_EMAIL="me@myhost.mydomain"|export KEY_EMAIL="irwan@aidan.my"|' /etc/openvpn/easy-rsa/vars
+sed -i 's|export KEY_OU="MyOrganizationalUnit"|export KEY_OU="Aidan VPN"|' /etc/openvpn/easy-rsa/vars
+sed -i 's|export KEY_NAME="EasyRSA"|export KEY_NAME="Aidan VPN"|' /etc/openvpn/easy-rsa/vars
+sed -i 's|export KEY_OU=changeme|export KEY_OU=Aidan VPN|' /etc/openvpn/easy-rsa/vars
 # create diffie-helman pem
 openssl dhparam -out /etc/openvpn/dh1024.pem 1024
 # create pki
@@ -261,7 +261,7 @@ echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 sed -i '$ i\echo "nameserver 8.8.8.8" > /etc/resolv.conf' /etc/rc.local
 sed -i '$ i\echo "nameserver 8.8.4.4" >> /etc/resolv.conf' /etc/rc.local
 # set time GMT +8
-ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 # setting ufw
 ufw allow ssh
 ufw allow 1194/tcp
@@ -306,7 +306,7 @@ echo "######### Download your config files here! #########"
 echo
 echo "################# OpenVPN Account ##################"
 echo "~> Username: openvpn"
-echo "~> Password: fordsenpai"
+echo "~> Password: irwanmohi"
 echo "################# OpenVPN Account ##################"
 echo
 echo "######### To Add OpenVPN User Account ##############"
